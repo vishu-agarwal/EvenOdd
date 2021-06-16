@@ -14,15 +14,16 @@ class ResultVC: UIViewController {
     private let lbl:UILabel = {
         let label = UILabel()
         label.text = ""
+        
         label.textAlignment   = .center
-        label.backgroundColor  = .blue
-        label.textColor = .white
+        label.backgroundColor  = .lightGray
+        label.textColor = .black
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "RESULT"
         view.backgroundColor = .white
         view.addSubview(lbl)
         lbl.text = result
@@ -35,14 +36,5 @@ class ResultVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

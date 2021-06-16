@@ -18,6 +18,7 @@ class checkEvenOddvcViewController: UIViewController {
         txt.textAlignment = .center
         txt.borderStyle = .roundedRect
         txt.backgroundColor = UIColor.white
+        // comment
         
         txt.textColor = .blue
         
@@ -29,8 +30,8 @@ class checkEvenOddvcViewController: UIViewController {
         let btn = UIButton()
         btn.setTitle("CHECK", for: .normal)
         btn.addTarget(self, action: #selector(chkEO), for: .touchUpInside)
-        btn.backgroundColor = .orange
-        btn.layer.cornerRadius = 10
+        btn.backgroundColor = .black
+        btn.layer.cornerRadius = 15
         return btn
     }()
     
@@ -45,23 +46,27 @@ class checkEvenOddvcViewController: UIViewController {
             }
             return
         }
+        //call anothe vc that display result
         let vc = ResultVC()
         if num % 2 == 0{
-            vc.result =  "You Entered EVEN Number."
+            //result is variable at result vc
+            vc.result =   "\(num) Is EVEN Number."
         }
         else{
-            vc.result =  "You Entered ODD Number."
+            vc.result =  "\(num) Is ODD Number."
         }
         navigationController?.pushViewController(vc, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "EVEN-ODD"
+        view.backgroundColor = .lightGray
         view.addSubview(txtNo)
         view.addSubview(chk)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         txtNo.frame = CGRect(x:40,y: (view.height/2) - 50,width: view.width  - 80,height: 60)
         chk.frame = CGRect(x: 40,y: txtNo.bottom+20,width: view.width - 80, height: 60)
         
